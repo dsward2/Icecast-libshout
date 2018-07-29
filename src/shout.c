@@ -879,7 +879,8 @@ int shout_set_format(shout_t *self, unsigned int format)
         return self->error = SHOUTERR_CONNECTED;
 
     if (format != SHOUT_FORMAT_OGG && format != SHOUT_FORMAT_MP3 &&
-        format != SHOUT_FORMAT_WEBM && format != SHOUT_FORMAT_WEBMAUDIO) {
+        format != SHOUT_FORMAT_WEBM && format != SHOUT_FORMAT_WEBMAUDIO &&
+        format != SHOUT_FORMAT_AAC) {
         return self->error = SHOUTERR_UNSUPPORTED;
     }
 
@@ -1326,6 +1327,11 @@ retry:
                 case SHOUT_FORMAT_WEBM:
                 case SHOUT_FORMAT_WEBMAUDIO:
                     if ((rc = self->error = shout_open_webm(self)) != SHOUTERR_SUCCESS)
+                        goto failure;
+                break;
+
+                case SHOUT_FORMAT_AAC:
+                    if ((rc = self->error = shout_open_aac(self)) != SHOUTERR_SUCCESS)
                         goto failure;
                 break;
 
