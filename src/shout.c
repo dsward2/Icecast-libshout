@@ -1351,7 +1351,7 @@ retry:
 
 failure:
     shout_close(self);
-    return rc;
+    return self->error = rc;
 }
 
 static int try_write(shout_t *self, const void *data_p, size_t len)
