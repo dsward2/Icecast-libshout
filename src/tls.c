@@ -65,7 +65,7 @@ static inline int tls_setup(shout_tls_t *tls)
 
     SSL_library_init();
     SSL_load_error_strings();
-    SSLeay_add_all_algorithms();
+    //    SSLeay_add_all_algorithms();
     SSLeay_add_ssl_algorithms();
 
     meth = TLSv1_client_method();
