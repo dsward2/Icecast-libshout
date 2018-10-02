@@ -1,6 +1,6 @@
 [submodule "m4"]
 	path = m4
-	url = ../../xiph/icecast-m4.git
+	url = git@github.com:xiph/Icecast-m4.git
 [submodule "src/common"]
 	path = src/common
-	url = ../../xiph/icecast-common.git
+	url = git@github.com:xiph/Icecast-common.git
