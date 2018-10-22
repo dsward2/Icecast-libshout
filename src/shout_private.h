@@ -204,10 +204,11 @@ int     shout_create_roaraudio_request(shout_t *self);
 int     shout_get_roaraudio_response(shout_t *self);
 int     shout_parse_roaraudio_response(shout_t *self);
 
-/* containsers */
+/* containers */
 int shout_open_ogg(shout_t *self);
 int shout_open_mp3(shout_t *self);
 int shout_open_webm(shout_t *self);
 int shout_open_aac(shout_t *self);
+int shout_open_aac_latmloas(shout_t *self);
 
 #endif /* __LIBSHOUT_SHOUT_PRIVATE_H__ */

@@ -46,7 +46,8 @@
 #define SHOUT_FORMAT_MP3            (  1) /* audio/mpeg */
 #define SHOUT_FORMAT_WEBM           (  2) /* video/webm */
 #define SHOUT_FORMAT_WEBMAUDIO      (  3) /* audio/webm audio only */
-#define SHOUT_FORMAT_AAC            (  4) /* audio/aac */
+#define SHOUT_FORMAT_AAC            (  4) /* audio/aac (ADTS framing) */
+#define SHOUT_FORMAT_AAC_LATMLOAS   (  5) /* audio/aac (LATM/LOAS framing) */
 
 /* backward-compatibility alias */
 #define SHOUT_FORMAT_VORBIS         SHOUT_FORMAT_OGG

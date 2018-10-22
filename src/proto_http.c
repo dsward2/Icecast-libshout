@@ -91,6 +91,10 @@ int shout_create_http_request(shout_t *self)
             mimetype = "audio/aac";
         break;
 
+        case SHOUT_FORMAT_AAC_LATMLOAS: // audio/mp4a or mp4a-latm? (see rfc3016)
+            mimetype = "audio/aac";
+        break;
+
         default:
             return SHOUTERR_INSANE;
         break;
