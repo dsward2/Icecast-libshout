@@ -137,6 +137,8 @@ shout_t *shout_new(void)
     self->format    = LIBSHOUT_DEFAULT_FORMAT;
     self->protocol  = LIBSHOUT_DEFAULT_PROTOCOL;
 
+    self->aac_fl    = 0;
+
     return self;
 }
 
