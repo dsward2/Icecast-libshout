@@ -870,6 +870,19 @@ unsigned int shout_get_public(shout_t *self)
     return self->public;
 }
 
+int shout_set_aac_fl(shout_t *self, unsigned int fl)
+{
+    if (!self)
+        return SHOUTERR_INSANE;
+    if (self->state != SHOUT_STATE_UNCONNECTED)
+        return self->error = SHOUTERR_CONNECTED;
+
+    self->aac_fl = fl;
+
+    return self->error = SHOUTERR_SUCCESS;
+}
+
+
 int shout_set_format(shout_t *self, unsigned int format)
 {
     if (!self)
@@ -880,7 +893,8 @@ int shout_set_format(shout_t *self, unsigned int format)
 
     if (format != SHOUT_FORMAT_OGG && format != SHOUT_FORMAT_MP3 &&
         format != SHOUT_FORMAT_WEBM && format != SHOUT_FORMAT_WEBMAUDIO &&
-        format != SHOUT_FORMAT_AAC && format != SHOUT_FORMAT_AAC_LATMLOAS) {
+        format != SHOUT_FORMAT_AAC && format != SHOUT_FORMAT_AAC_LATMLOAS
+        && format != SHOUT_FORMAT_AAC_USAC) {
         return self->error = SHOUTERR_UNSUPPORTED;
     }
 
@@ -1336,6 +1350,7 @@ retry:
                 break;
 
                 case SHOUT_FORMAT_AAC_LATMLOAS:
+                case SHOUT_FORMAT_AAC_USAC:
                     if ((rc = self->error = shout_open_aac_latmloas(self)) != SHOUTERR_SUCCESS)
                         goto failure;
                 break;

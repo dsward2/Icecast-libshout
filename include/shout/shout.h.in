@@ -48,6 +48,7 @@
 #define SHOUT_FORMAT_WEBMAUDIO      (  3) /* audio/webm audio only */
 #define SHOUT_FORMAT_AAC            (  4) /* audio/aac (ADTS framing) */
 #define SHOUT_FORMAT_AAC_LATMLOAS   (  5) /* audio/aac (LATM/LOAS framing) */
+#define SHOUT_FORMAT_AAC_USAC       (  6) /* audio/usac (for xHE-AAC, aot 42) */
 
 /* backward-compatibility alias */
 #define SHOUT_FORMAT_VORBIS         SHOUT_FORMAT_OGG

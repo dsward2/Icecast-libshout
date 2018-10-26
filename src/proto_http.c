@@ -95,6 +95,10 @@ int shout_create_http_request(shout_t *self)
             mimetype = "audio/aac";
         break;
 
+        case SHOUT_FORMAT_AAC_USAC:
+            mimetype = "audio/usac";
+        break;
+
         default:
             return SHOUTERR_INSANE;
         break;
